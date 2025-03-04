@@ -11,9 +11,9 @@ void bubbleSort(char cuvintematrice[100][100], int cuvinte) {
         for (int i = 0; i < cuvinte - 1; i++) {
             if (strlen(cuvintematrice[i]) < strlen(cuvintematrice[i + 1])) {  //sortam desc
                 char temp[100];
-                strcpy_s(temp, cuvintematrice[i]);
-                strcpy_s(cuvintematrice[i], cuvintematrice[i + 1]);
-                strcpy_s(cuvintematrice[i + 1], temp);
+                strcpy_s(temp,sizeof(temp),cuvintematrice[i]);
+                strcpy_s(cuvintematrice[i],sizeof(cuvintematrice[i]), cuvintematrice[i + 1]);
+                strcpy_s(cuvintematrice[i + 1],sizeof(cuvintematrice[i+1]), temp);
                 swapped = true;
             }
         }
